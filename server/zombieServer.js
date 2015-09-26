@@ -10,9 +10,17 @@ browser.visit(url, function(e) {
   else {
     var data = browser.html();
     var $ = cheerio.load(data);
-    var songinfo = $('#playlist_1 .songinfo');
-    var artist = songinfo.children().first().text();
-    console.log(artist);
+    var results = [];
+    var songinfo = $('.songinfo');
+    songinfo.each(function() {
+      var artist = $(this).children().first();
+      var title = artist.next();
+      results.push({
+        artist: artist.text(),
+        title: title.text()
+      });
+    });
+    console.log(results);
   }
 });
 
