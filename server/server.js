@@ -12,10 +12,3 @@ http.get("http://www.kpig.com/playlist.htm", function(res) {
     console.log(data);
   });
 });
-
-/*http.request({
-  url: 'http://www.kpig.com/playlist.htm'
-}, function(res) {
-  console.log('true');
-});*/
-
